@@ -1,0 +1,8 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: leafsheets-rds-service-staging
+  namespace: leafsheets-staging
+spec:
+  type: ExternalName
+  externalName: leafsheetsstaging.cy55cevogssw.us-west-2.rds.amazonaws.com

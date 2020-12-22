@@ -1,0 +1,5 @@
+# Ignore our ENV
+.env
+
+staticfiles/
+mediafiles/

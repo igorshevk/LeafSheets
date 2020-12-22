@@ -1,0 +1,60 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: leafsheets-django-job-migrate-production
+  namespace: leafsheets-production
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: dsp-regcred
+      containers:
+        - name: django
+          image: deepspaceprogram/leafsheets-django-production:0.0.0
+          command: ['python', 'manage.py', 'migrate']
+          env:
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: secretKey
+            - name: DJANGO_ENV
+              value: production
+            - name: POSTGRES_DB
+              value: leafsheetsproduction
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-production
+                  key: aws_access_key_id
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-production
+                  key: aws_secret_access_key
+            - name: STRIPE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-production
+                  key: stripe_api_key
+            - name: AWS_STORAGE_BUCKET_NAME
+              value: leafsheets-django-production
+            - name: GOOGLE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-production
+                  key: google_api_key
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-rds-cred-production
+                  key: user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-rds-cred-production
+                  key: password
+            - name: POSTGRES_HOST
+              value: leafsheets-rds-service-production  
+      restartPolicy: Never
+  backoffLimit: 5

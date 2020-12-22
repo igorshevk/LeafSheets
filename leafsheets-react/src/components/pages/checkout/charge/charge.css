@@ -1,0 +1,12 @@
+.PaymentSwitch .react-switch {
+    border-radius: 4px !important;
+}
+
+.PaymentSwitch .react-switch-bg {
+    border-radius: 4px !important;
+}
+
+.PaymentSwitch .react-switch-handle {
+    border-radius: 4px !important;
+    width: 75px !important;
+}

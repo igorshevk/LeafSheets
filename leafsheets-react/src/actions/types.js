@@ -1,0 +1,69 @@
+// Messaging & Errors
+export const GET_ERRORS = 'GET_ERRORS';
+export const CREATE_MESSAGE = 'CREATE_MESSAGE';
+
+// Auth & User
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const USER_LOADING = 'USER_LOADING';
+export const USER_LOADED = 'USER_LOADED';
+export const UPDATE_USER = 'UPDATE_USER';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAIL = 'REGISTER_FAIL';
+
+// Company
+export const UPDATE_COMPANY = 'UPDATE_COMPANY';
+export const DELETE_COMPANY = 'DELETE_COMPANY';
+export const GET_COMPANIES = 'GET_COMPANIES';
+export const ADD_COMPANY = 'ADD_COMPANY';
+
+// Sheets
+export const GET_ALL_SHEETS = 'GET_ALL_SHEETS';
+export const GET_SHEET = 'GET_SHEET';
+export const EMPTY_SHEET = 'EMPTY_SHEET';
+export const GET_USER_SHEET = 'GET_USER_SHEET';
+export const GET_USER_SHEETS = 'GET_USER_SHEETS';
+export const UPDATE_USER_VARIABLE_DICT = 'UPDATE_USER_VARIABLE_DICT';
+export const SET_ACTIVE_USER_SHEET = 'SET_ACTIVE_USER_SHEET';
+export const GENERATE_USER_SHEET = 'GENERATE_USER_SHEET';
+export const DOWNLOAD_USER_SHEET = 'DOWNLOAD_USER_SHEET';
+export const PREVIEW_USER_SHEET = 'PREVIEW_USER_SHEET';
+
+// Items
+export const GET_ITEM = 'GET_ITEM';
+
+export const DELETE_CART_ITEM = 'DELETE_CART_ITEM';
+export const ADD_CART_ITEM = 'ADD_CART_ITEM';
+export const GET_CART_ITEMS = 'GET_CART_ITEMS';
+export const GET_CART = 'GET_CART';
+
+// Addresses
+export const GET_ADDRESSES = 'GET_ADDRESSES';
+export const GET_ADDRESS = 'GET_ADDRESS';
+export const ADD_ADDRESS = 'ADD_ADDRESS';
+export const DELETE_ADDRESS = 'DELETE_ADDRESS';
+export const UPDATE_ADDRESS = 'UPDATE_ADDRESS';
+
+// Payment Options
+export const GET_PAYMENT_METHODS = 'GET_PAYMENT_METHODS';
+export const GET_PAYMENT_METHOD = 'GET_PAYMENT_METHOD';
+export const ADD_PAYMENT_METHOD = 'ADD_PAYMENT_METHOD';
+export const DELETE_PAYMENT_METHOD = 'DELETE_PAYMENT_METHOD';
+export const UPDATE_PAYMENT_METHOD = 'UPDATE_PAYMENT_METHOD';
+
+// UI
+export const APPLY_BACKGROUND_DIM = 'APPLY_BACKGROUND_DIM';
+export const UNAPPLY_BACKGROUND_DIM = 'UNAPPLY_BACKGROUND_DIM';
+export const OPEN_SIDEBAR = 'OPEN_SIDEBAR';
+export const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR';
+export const BEGIN_LOADING = 'BEGIN_LOADING';
+export const END_LOADING = 'END_LOADING';
+export const UPDATE_NAV_COLOR = 'UPDATE_NAV_COLOR';
+export const CLEAR_FORM = 'CLEAR_FORM';
+export const REDIRECT_TO = 'REDIRECT_TO';
+
+// Charges
+export const GET_CHARGES = 'GET_CHARGES';
+export const ADD_CHARGE = 'ADD_CHARGE';

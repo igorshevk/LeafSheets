@@ -1,0 +1,53 @@
+.pac-container:parent {
+    position: relative;
+}
+
+.pac-container {
+    border: 1px solid #b2bfc4;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-style: solid;
+    box-sizing: content-box !important;
+    box-shadow: 0 0.063em 0.313em 0 rgba(0,0,0,.07), 0 0.438em 1.063em 0 rgba(0,0,0,.1);
+    margin-left: -6px;
+    padding-right: 12px;
+    margin-top: 12px;
+    outline: none;
+}
+
+.pac-icon {
+    display: none;
+    height: 46px;
+}
+
+.pac-item:first-child {
+    border-top: none;
+    margin-top: 1px;
+}
+
+.pac-item {
+    align-items: center;
+    box-sizing: content-box !important;
+    cursor: pointer;
+    display: flex;
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    font-weight: 400px;
+    height: 46px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.pac-item,
+.pac-item * {
+    color: #b2bfc4;
+}
+
+.pac-item:hover * {
+    color: #151515;
+}
+
+.pac-container:after {
+    background-image: none !important;
+    height: 0px;
+}

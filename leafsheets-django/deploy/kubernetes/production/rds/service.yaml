@@ -1,0 +1,8 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: leafsheets-rds-service-production
+  namespace: leafsheets-production
+spec:
+  type: ExternalName
+  externalName: 

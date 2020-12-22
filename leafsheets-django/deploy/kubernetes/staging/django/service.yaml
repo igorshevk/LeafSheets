@@ -1,0 +1,20 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: leafsheets-django-service-staging
+  namespace: leafsheets-staging
+  # annotations:
+  #   # Note that the backend talks over HTTP.
+  #   service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+  #   # TODO: Fill in with the ARN of your certificate.
+  #   service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-east-1:795730031374:certificate/7a488844-4fea-4214-8a72-748f5f09f19c
+  #   # Only run SSL on the port named "https" below.
+  #   service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
+spec:
+  selector:
+    pod: leafsheets-django-staging
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: LoadBalancer

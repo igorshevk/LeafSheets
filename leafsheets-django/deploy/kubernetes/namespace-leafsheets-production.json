@@ -1,0 +1,10 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+      "name": "leafsheets-production",
+      "labels": {
+        "name": "leafsheets-production"
+      }
+    }
+  }

@@ -1,0 +1,48 @@
+.checkout {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.StripeInputWrapper,
+.StripeInputWrapper--half {
+    align-items: flex-start;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #b2bfc4;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Barlow";
+    font-size: 18px;
+    font-weight: 400;
+    height: 48px;
+    line-height: 48px;
+    margin-bottom: 24px !important;
+    width: 100%;
+}
+
+.StripeInputWrapper:hover,
+.StripeInputWrapper--half:hover {
+    border: 1px solid #30E1A5 !important;
+}
+
+.StripeInputWrapper--half {
+    flex-basis: 48%
+}
+
+.StripeElement {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.StripeElement * {
+    font-family: "Barlow" !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+}

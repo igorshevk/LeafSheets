@@ -1,0 +1,75 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: leafsheets-django-job-add-sheets-staging
+  namespace: leafsheets-staging
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: dsp-regcred
+      containers:
+        - name: django
+          image: deepspaceprogram/leafsheets-django-staging:0.0.8
+          command: ['python', 'manage.py', 'add_sheets']
+          env:
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: secretKey
+            - name: DJANGO_ENV
+              value: staging
+            - name: POSTGRES_DB
+              value: leafsheetsstaging
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: aws_access_key_id
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: aws_secret_access_key
+            - name: STRIPE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: stripe_api_key
+            - name: MAILCHIMP_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: mailchimp_api_key
+            - name: MAILCHIMP_EMAIL_LIST_ID
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: mailchimp_email_list_id
+            - name: MAILCHIMP_DATA_CENTER
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: mailchimp_data_center
+            - name: AWS_STORAGE_BUCKET_NAME
+              value: leafsheets-django-staging
+            - name: GOOGLE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-django-cred-staging
+                  key: google_api_key
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-rds-cred-staging
+                  key: user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: leafsheets-rds-cred-staging
+                  key: password
+            - name: POSTGRES_HOST
+              value: "leafsheets-rds-service-staging.leafsheets-staging"
+      restartPolicy: Never
+  backoffLimit: 5
